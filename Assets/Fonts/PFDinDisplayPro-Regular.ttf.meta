@@ -1,0 +1,24 @@
+fileFormatVersion: 2
+guid: b9f66e22bf913d14cb853de03105c2af
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: PF DinDisplay Pro
+  fontNames:
+  - PF DinDisplay Pro
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 0d2adc637da46ff43ab808446a6f9578, type: 3}
+  - {fileID: 12800000, guid: 7d8348e5dff0c784cb4966abf7986527, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
