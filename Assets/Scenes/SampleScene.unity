@@ -180,9 +180,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2abecbbc7316e8a4fa7dcd40493e25c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  allDisplays: {fileID: 0}
-  menu: {fileID: 0}
-  swipeSpeed: 0.7
 --- !u!4 &19694674
 Transform:
   m_ObjectHideFlags: 0
@@ -373,6 +370,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   data:
     date: []
+  fileName: /gamesave.save
 --- !u!4 &511543194
 Transform:
   m_ObjectHideFlags: 0
@@ -671,7 +669,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.000025919233, y: -0.0000676035}
+  m_AnchoredPosition: {x: -0.000025919233, y: -0.00011375241}
   m_SizeDelta: {x: 0, y: 300}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &811800448
@@ -738,7 +736,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &910630183
 GameObject:
@@ -813,6 +811,52 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 910630183}
   m_CullTransparentMesh: 0
+--- !u!1 &1009283092
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1009283094}
+  - component: {fileID: 1009283093}
+  m_Layer: 0
+  m_Name: '[Data Loader] (1)'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1009283093
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1009283092}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 087d5e46c54a04a4cbd5dc33d3542036, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  data:
+    date: []
+  fileName: /gamesave2.save
+--- !u!4 &1009283094
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1009283092}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 225.77045, y: 433.0168, z: -6738.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1146725454
 GameObject:
   m_ObjectHideFlags: 0
@@ -895,8 +939,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1187009802}
+  - component: {fileID: 1187009803}
   m_Layer: 5
-  m_Name: AllDisplays
+  m_Name: Main Display
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -921,6 +966,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1187009803
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1187009801}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f7fb2926e865954b8186e038a7fdbb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mouseEvents: {fileID: 19694673}
 --- !u!1 &1191155582
 GameObject:
   m_ObjectHideFlags: 0
@@ -995,10 +1053,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dataLoader: {fileID: 511543193}
+  dataLoader2: {fileID: 1009283093}
   displaysContainer: {fileID: 1187009801}
-  mouseSpeedController: {fileID: 0}
+  mouseSpeedController: {fileID: 19694673}
   displayPref: {fileID: 584336736662601559, guid: 58c78fa58d84d594289e4af9d5c2255f,
     type: 3}
+  displaysList: []
 --- !u!1 &1289856497
 GameObject:
   m_ObjectHideFlags: 0
@@ -1027,7 +1087,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1394006731
 GameObject:
@@ -1110,7 +1170,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 224028041}
   m_HandleRect: {fileID: 224028040}
   m_Direction: 2
-  m_Value: 0
+  m_Value: 1
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:

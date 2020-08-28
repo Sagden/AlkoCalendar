@@ -8,6 +8,7 @@ using UnityEngine;
 public class DataLoader : MonoBehaviour
 {
     public Data data;
+    public string fileName = "/gamesave.save";
 
     private void Awake()
     {
@@ -31,15 +32,15 @@ public class DataLoader : MonoBehaviour
     {
         string dataJson = JsonUtility.ToJson(data);
 
-        File.WriteAllText(Application.persistentDataPath + "/gamesave.save", dataJson);
+        File.WriteAllText(Application.persistentDataPath + fileName, dataJson);
     }
 
     //Загрузка данных из файла
     public Data LoadGame()
     {
-        if (File.Exists(Application.persistentDataPath + "/gamesave.save"))
+        if (File.Exists(Application.persistentDataPath + fileName))
         {
-            Data newData = JsonUtility.FromJson<Data>(File.ReadAllText(Application.persistentDataPath + "/gamesave.save"));
+            Data newData = JsonUtility.FromJson<Data>(File.ReadAllText(Application.persistentDataPath + fileName));
             return newData;
         }
         return null;

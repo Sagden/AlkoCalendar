@@ -6,11 +6,14 @@ using UnityEngine;
 public class DisplaySpawnController : MonoBehaviour
 {
     public DataLoader dataLoader;
+    public DataLoader dataLoader2;
     public GameObject displaysContainer;
     public MouseEventsController mouseSpeedController;
     [Space]
     public CalendarGenerate displayPref;
-    
+
+    [SerializeField]
+    private List<CalendarGenerate> displaysList = new List<CalendarGenerate>();
     private int currentDisplayIndex = 1;
     public int CurrentDisplayIndex
     {
@@ -22,7 +25,20 @@ public class DisplaySpawnController : MonoBehaviour
         }
     }
 
-    private List<CalendarGenerate> displaysList = new List<CalendarGenerate>();
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            dataLoader = dataLoader2;
+            foreach (CalendarGenerate calendarGenerate in displaysList)
+                Destroy(calendarGenerate.gameObject);
+            displaysList.Clear();
+            displaysContainer.transform.localPosition = Vector3.zero;
+            DisplaysInit();
+        }
+    }
+
+    
 
     private void Start()
     {
@@ -134,6 +150,7 @@ public class DisplaySpawnController : MonoBehaviour
         if (displaySide == ChangeDisplaySide.Up)
             CurrentDisplayIndex++;
         else
+        if (displaySide == ChangeDisplaySide.Down)
             CurrentDisplayIndex--;
     }
 

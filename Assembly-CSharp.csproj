@@ -74,6 +74,7 @@
     <Compile Include="Assets\Demigiant\DOTween\Modules\DOTweenModuleUnityVersion.cs" />
     <Compile Include="Assets\Demigiant\DOTween\Modules\DOTweenModuleUtils.cs" />
     <Compile Include="Assets\DisplaySpawnController.cs" />
+    <Compile Include="Assets\MainDisplayBehaviour.cs" />
     <Compile Include="Assets\MouseEventsController.cs" />
     <Compile Include="Assets\SwitchWine.cs" />
     <Compile Include="Assets\TestText.cs" />
