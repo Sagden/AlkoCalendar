@@ -28,7 +28,7 @@ public class CalendarGenerate : MonoBehaviour
     private void Start()
     {
         DateTime date = new DateTime(year, month, 1);
-        horizontalPrefsCount = GetHorizontalPrefsCount(date) + 1;
+        horizontalPrefsCount = GetDaysInMonth(date) + 1;
         HorizontalGridObjectsGenerate();
         ContentGenerate(date);
         MonthTextGenerate(month);
@@ -36,7 +36,7 @@ public class CalendarGenerate : MonoBehaviour
     }
 
     //Расчет количества строк в месяце
-    private int GetHorizontalPrefsCount(DateTime dateTime)
+    private int GetDaysInMonth(DateTime dateTime)
     {
         int daysInMonth = DateTime.DaysInMonth(dateTime.Year, dateTime.Month);
 

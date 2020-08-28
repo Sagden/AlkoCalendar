@@ -7,7 +7,7 @@ public class DisplaySpawnController : MonoBehaviour
 {
     public DataLoader dataLoader;
     public GameObject displaysContainer;
-    public MouseSpeedController mouseSpeedController;
+    public MouseEventsController mouseSpeedController;
     [Space]
     public CalendarGenerate displayPref;
     

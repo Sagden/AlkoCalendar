@@ -32,8 +32,6 @@ public class DataLoader : MonoBehaviour
         string dataJson = JsonUtility.ToJson(data);
 
         File.WriteAllText(Application.persistentDataPath + "/gamesave.save", dataJson);
-
-        Debug.Log("Game Saved");
     }
 
     //Загрузка данных из файла
