@@ -63,9 +63,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\CalendarGenerate.cs" />
-    <Compile Include="Assets\Data.cs" />
-    <Compile Include="Assets\DataLoader.cs" />
     <Compile Include="Assets\Demigiant\DOTween\Modules\DOTweenModuleAudio.cs" />
     <Compile Include="Assets\Demigiant\DOTween\Modules\DOTweenModulePhysics.cs" />
     <Compile Include="Assets\Demigiant\DOTween\Modules\DOTweenModulePhysics2D.cs" />
@@ -73,11 +70,14 @@
     <Compile Include="Assets\Demigiant\DOTween\Modules\DOTweenModuleUI.cs" />
     <Compile Include="Assets\Demigiant\DOTween\Modules\DOTweenModuleUnityVersion.cs" />
     <Compile Include="Assets\Demigiant\DOTween\Modules\DOTweenModuleUtils.cs" />
-    <Compile Include="Assets\DisplaySpawnController.cs" />
-    <Compile Include="Assets\MainDisplayBehaviour.cs" />
-    <Compile Include="Assets\MouseEventsController.cs" />
-    <Compile Include="Assets\SwitchWine.cs" />
-    <Compile Include="Assets\TestText.cs" />
+    <Compile Include="Assets\Scripts\CalendarGenerate.cs" />
+    <Compile Include="Assets\Scripts\Data.cs" />
+    <Compile Include="Assets\Scripts\DataLoader.cs" />
+    <Compile Include="Assets\Scripts\DisplaySpawnController.cs" />
+    <Compile Include="Assets\Scripts\MouseEventsController.cs" />
+    <Compile Include="Assets\Scripts\SwitchWine.cs" />
+    <Compile Include="Assets\Scripts\TestText.cs" />
+    <Compile Include="Assets\Scripts\UIController.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark02.cs" />
