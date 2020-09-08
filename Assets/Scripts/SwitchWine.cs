@@ -14,9 +14,6 @@ public class SwitchWine : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     public Sprite spriteEmpty, spriteFull;
     public Image image;
 
-    public List<Sprite> animationList = new List<Sprite>();
-    private int animationIndex = 0;
-
     private bool wineGlassFull = false;
     public bool WineGlassFull { get => wineGlassFull; }
     
@@ -85,16 +82,7 @@ public class SwitchWine : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 
         dateTextContainer.color = colorOn;
 
-        if (animationIndex < animationList.Count)
-        {
-            image.sprite = animationList[animationIndex];
-            animationIndex++;
-            Invoke("AnumationContinue", 0.06f);
-        }
-        else
-        {
-            image.sprite = spriteFull;
-        }
+        image.sprite = spriteFull;
     }
 
     public void SwitchOff()
@@ -104,22 +92,7 @@ public class SwitchWine : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         dateTextContainer.color = colorOff;
 
         image.sprite = spriteEmpty;
-        animationIndex = 0;
         wineGlassFull = false;
         pressed = false;
-    }
-
-    private void AnumationContinue()
-    {
-        if (animationIndex < animationList.Count)
-        {
-            image.sprite = animationList[animationIndex];
-            animationIndex++;
-            Invoke("AnumationContinue", 0.06f);
-        }
-        else
-        {
-            image.sprite = spriteFull;
-        }
     }
 }

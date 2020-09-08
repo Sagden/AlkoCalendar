@@ -6,6 +6,7 @@ using System;
 [Serializable]
 public class Data
 {
+    public string nameCategory;
     public List<Year> date = new List<Year>();
 }
 

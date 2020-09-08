@@ -170,6 +170,7 @@ GameObject:
   - component: {fileID: 1162158942619879453}
   - component: {fileID: 6461822428650381547}
   - component: {fileID: -2988680870562616874}
+  - component: {fileID: 1079479385115587391}
   m_Layer: 0
   m_Name: WineGlass
   m_TagString: Untagged
@@ -195,7 +196,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 90, y: 90}
+  m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1162158942619879454
 CanvasRenderer:
@@ -218,12 +219,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 8af29f076fffeed4b873fe20ca6a2bb5, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1de4835d6fdcabc458b511b8ebff15cc, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -248,23 +249,9 @@ MonoBehaviour:
   dateTextContainer: {fileID: 1138175514222558547}
   colorOff: {r: 0, g: 0, b: 0, a: 1}
   colorOn: {r: 1, g: 1, b: 1, a: 1}
-  spriteEmpty: {fileID: 21300000, guid: 8af29f076fffeed4b873fe20ca6a2bb5, type: 3}
-  spriteFull: {fileID: 21300000, guid: 44d3a5a958957de47a4286b2ade675ba, type: 3}
+  spriteEmpty: {fileID: 21300000, guid: c4ceb44bb0df39f4093cf9b6666e6889, type: 3}
+  spriteFull: {fileID: 21300000, guid: 82082b7901f2a5f43900f759c898c514, type: 3}
   image: {fileID: 1162158942619879453}
-  animationList:
-  - {fileID: 21300000, guid: 48efcc122e9d1b34085121bf421f5092, type: 3}
-  - {fileID: 21300000, guid: 3628afa703874f84eae8888cf75ba5d2, type: 3}
-  - {fileID: 21300000, guid: 0233e275ffff0ab4fbba8b33f81b8f07, type: 3}
-  - {fileID: 21300000, guid: 2b3cdfb09a5f27643b6152bf52371177, type: 3}
-  - {fileID: 21300000, guid: a7284766a283e254caa684ab08a03e01, type: 3}
-  - {fileID: 21300000, guid: aa151523179ac9c4eb6b5bd51af61493, type: 3}
-  - {fileID: 21300000, guid: 3a97474cfdd625b4f9b56cf453128a80, type: 3}
-  - {fileID: 21300000, guid: 4a1f7c59713358e4da243246c11dc25a, type: 3}
-  - {fileID: 21300000, guid: f628a1ef3fc3c904794d4607740591e5, type: 3}
-  - {fileID: 21300000, guid: af427aa8c640b224982fb88444df1c39, type: 3}
-  - {fileID: 21300000, guid: 2331d5b598f292345b667a05231a88a1, type: 3}
-  - {fileID: 21300000, guid: c5f4e67a5f84cc049baec7145ffde035, type: 3}
-  - {fileID: 21300000, guid: bd46c26a69590314aabaf50699ef94cb, type: 3}
   pressed: 0
 --- !u!65 &-2988680870562616874
 BoxCollider:
@@ -279,6 +266,21 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 92.66, y: 104.4, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1079479385115587391
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1162158942619879450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0.7075472, b: 0.042563453, a: 1}
+  m_EffectDistance: {x: 1, y: -1}
+  m_UseGraphicAlpha: 1
 --- !u!1 &4712928652516116046
 GameObject:
   m_ObjectHideFlags: 0

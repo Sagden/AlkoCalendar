@@ -8,10 +8,12 @@ public class DisplaySpawnController : MonoBehaviour
     public DataLoader dataLoader;
     public DataLoader dataLoader2;
     public GameObject displaysContainer;
-    public MouseEventsController mouseSpeedController;
+    public UIBehaviour uiBehaviour;
+    public ModeController modeController;
     [Space]
     public CalendarGenerate displayPref;
 
+    private CalendarGenerate newCalendar;
     [SerializeField]
     private List<CalendarGenerate> displaysList = new List<CalendarGenerate>();
     private int currentDisplayIndex = 1;
@@ -38,17 +40,33 @@ public class DisplaySpawnController : MonoBehaviour
         }
     }
 
-    
+    private void Awake()
+    {
+        uiBehaviour.OnChangeDisplayY += DisplayChanged;
+
+        ModeController.OnChangeMode += DataReload;
+    }
+
+    private void DataReload()
+    {
+        //dataLoader.InitData(ModeController.currentModeIndex);
+
+        newCalendar.OnSaveChange -= SaveDays;
+
+        foreach (CalendarGenerate calendarGenerate in displaysList)
+            Destroy(calendarGenerate.gameObject);
+        displaysList.Clear();
+        displaysContainer.transform.localPosition = new Vector3( 864, 0, 0 );
+        DisplaysInit();
+    }
 
     private void Start()
     {
-        mouseSpeedController.OnDisplayChange += DisplayChanged;
-
         DisplaysInit();
     }
     private void OnDestroy()
     {
-        mouseSpeedController.OnDisplayChange -= DisplayChanged;
+        uiBehaviour.OnChangeDisplayY -= DisplayChanged;
     }
 
     private void DisplaysInit()
@@ -65,7 +83,7 @@ public class DisplaySpawnController : MonoBehaviour
         displayPref.month = dateTime.Month;
         displayPref.year = dateTime.Year;
 
-        CalendarGenerate newCalendar = Instantiate(displayPref, displaysContainer.transform);
+        newCalendar = Instantiate(displayPref, displaysContainer.transform);
 
         newCalendar.GetComponent<RectTransform>().localPosition = new Vector3(0, yPosition, 0);
         newCalendar.OnSaveChange += SaveDays;
@@ -91,18 +109,18 @@ public class DisplaySpawnController : MonoBehaviour
         }
         else
         {
-            dataLoader.data.date.Add(new Year { year = calendarGenerate.year, months = new List<Month>() });
+            dataLoader.datas[ModeController.currentModeIndex].date.Add(new Year { year = calendarGenerate.year, months = new List<Month>() });
             ContainsYear(calendarGenerate.year).months.Add(new Month { month = calendarGenerate.month, isFullDay = calendarGenerate.isFullDay });
             Debug.Log("SaveDays else");
         }
 
-        dataLoader.SaveGame();
+        dataLoader.SaveGame(ModeController.currentModeIndex);
     }
 
     //Проверка есть ли в хранилище месяцы этого года?
     private Year ContainsYear(int year)
     {
-        foreach (Year yr in dataLoader.data.date)
+        foreach (Year yr in dataLoader.datas[ModeController.currentModeIndex].date)
         {
             if (yr.year == year)
             {
@@ -128,7 +146,7 @@ public class DisplaySpawnController : MonoBehaviour
 
     private List<bool> CheckDateInPool(DateTime dateTime)
     {
-        foreach(Year year in dataLoader.data.date)
+        foreach(Year year in dataLoader.datas[ModeController.currentModeIndex].date)
         {
             if (year.year == dateTime.Year)
             {

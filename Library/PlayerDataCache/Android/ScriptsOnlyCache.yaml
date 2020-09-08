@@ -1,18 +1,22 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
+    - AnimatedPanel
     - CalendarGenerate
-    - Controller
+    - DataLoader
     - DisplaySpawnController
-    - MouseSpeedController
+    - MenuButton
+    - ModeController
+    - ModeMenuGenerate
+    - MouseEventsController
+    - NewDataPanel
     - SwitchWine
-    - TestText
+    - UIBehaviour
+    - UIController
     DOTween.dll:
     - DG.Tweening.Core.DOTweenSettings
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
-    Unity.TextMeshPro.Editor.dll:
-    - TMPro.EditorUtilities.TMP_UiEditorPanel
     Unity.TextMeshPro.dll:
     - TMPro.TMP_ColorGradient
     - TMPro.TMP_FontAsset
@@ -36,9 +40,15 @@ ScriptsOnlyBuild:
     - UnityEngine.EventSystems.StandaloneInputModule
     - UnityEngine.UI.Button
     - UnityEngine.UI.CanvasScaler
+    - UnityEngine.UI.ContentSizeFitter
     - UnityEngine.UI.GraphicRaycaster
     - UnityEngine.UI.HorizontalLayoutGroup
     - UnityEngine.UI.Image
+    - UnityEngine.UI.InputField
+    - UnityEngine.UI.Mask
+    - UnityEngine.UI.ScrollRect
+    - UnityEngine.UI.Scrollbar
+    - UnityEngine.UI.Text
     - UnityEngine.UI.VerticalLayoutGroup
   sceneClasses:
     Assets/Scenes/SampleScene.unity:
@@ -60,8 +70,6 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
-    - Class: 95
-      Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
     - Class: 109
@@ -69,47 +77,71 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11186}
     - Class: 114
+      Script: {instanceID: 11350}
+    - Class: 114
+      Script: {instanceID: 11352}
+    - Class: 114
       Script: {instanceID: 11392}
     - Class: 114
-      Script: {instanceID: 11554}
+      Script: {instanceID: 11418}
     - Class: 114
-      Script: {instanceID: 11612}
+      Script: {instanceID: 11494}
     - Class: 114
-      Script: {instanceID: 11618}
+      Script: {instanceID: 11614}
+    - Class: 114
+      Script: {instanceID: 11692}
     - Class: 114
       Script: {instanceID: 11784}
     - Class: 114
       Script: {instanceID: 11812}
     - Class: 114
-      Script: {instanceID: 11950}
+      Script: {instanceID: 11948}
     - Class: 114
-      Script: {instanceID: 12038}
+      Script: {instanceID: 11982}
+    - Class: 114
+      Script: {instanceID: 12036}
+    - Class: 114
+      Script: {instanceID: 12050}
     - Class: 114
       Script: {instanceID: 12102}
     - Class: 114
       Script: {instanceID: 12192}
     - Class: 114
-      Script: {instanceID: 12284}
+      Script: {instanceID: 12266}
     - Class: 114
-      Script: {instanceID: 12412}
+      Script: {instanceID: 12286}
     - Class: 114
-      Script: {instanceID: 12416}
+      Script: {instanceID: 12384}
     - Class: 114
-      Script: {instanceID: 12430}
+      Script: {instanceID: 12414}
     - Class: 114
-      Script: {instanceID: 12628}
+      Script: {instanceID: 12418}
     - Class: 114
-      Script: {instanceID: 12692}
+      Script: {instanceID: 12432}
     - Class: 114
-      Script: {instanceID: 12850}
+      Script: {instanceID: 12630}
     - Class: 114
-      Script: {instanceID: 12858}
+      Script: {instanceID: 12686}
     - Class: 114
-      Script: {instanceID: 12872}
+      Script: {instanceID: 12696}
     - Class: 114
-      Script: {instanceID: 12972}
+      Script: {instanceID: 12718}
     - Class: 114
-      Script: {instanceID: 13072}
+      Script: {instanceID: 12748}
+    - Class: 114
+      Script: {instanceID: 12778}
+    - Class: 114
+      Script: {instanceID: 12860}
+    - Class: 114
+      Script: {instanceID: 12868}
+    - Class: 114
+      Script: {instanceID: 12882}
+    - Class: 114
+      Script: {instanceID: 12982}
+    - Class: 114
+      Script: {instanceID: 13082}
+    - Class: 114
+      Script: {instanceID: 16928}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -118,8 +150,6 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 196
       Script: {instanceID: 0}
-    - Class: 212
-      Script: {instanceID: 0}
     - Class: 213
       Script: {instanceID: 0}
     - Class: 222
@@ -127,6 +157,8 @@ ScriptsOnlyBuild:
     - Class: 223
       Script: {instanceID: 0}
     - Class: 224
+      Script: {instanceID: 0}
+    - Class: 225
       Script: {instanceID: 0}
   scriptHashData:
   - hash:
@@ -221,6 +253,12 @@ ScriptsOnlyBuild:
     className: TMP_InputField
   - hash:
       serializedVersion: 2
+      Hash: 894ebeab910f7b67e30c70391f61fdd1
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: MenuButton
+  - hash:
+      serializedVersion: 2
       Hash: 7ab0e790220bdca831fdd886b339039d
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -279,12 +317,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TMP_SubMeshUI
-  - hash:
-      serializedVersion: 2
-      Hash: 3379dd6f3c072b686c14abd4d26bf37c
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: MouseSpeedController
   - hash:
       serializedVersion: 2
       Hash: 5ab533713adae59372fb3e10a585c186
@@ -365,10 +397,10 @@ ScriptsOnlyBuild:
     className: Benchmark01
   - hash:
       serializedVersion: 2
-      Hash: 06a32b55a3eaed58b24f1495b0be9716
+      Hash: 3fb23bc52f6adab36a0cf2277913ea4a
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: Controller
+    className: DataLoader
   - hash:
       serializedVersion: 2
       Hash: b3ab2106268377ffe25dd18ac23dca28
@@ -399,6 +431,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: SwitchWine
+  - hash:
+      serializedVersion: 2
+      Hash: 6aa16886c8ebe9b9275e86440df06537
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: UIController
   - hash:
       serializedVersion: 2
       Hash: e63944317d2f5958e31963668bb29158
@@ -453,6 +491,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: RawImage
+  - hash:
+      serializedVersion: 2
+      Hash: c97ba94c9107a89079f25fbb33d8e004
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: UIBehaviour
   - hash:
       serializedVersion: 2
       Hash: e244702e0dc05782229aa524e4d757f5
@@ -587,6 +631,12 @@ ScriptsOnlyBuild:
     className: AudioTrack
   - hash:
       serializedVersion: 2
+      Hash: 98d2a4abd074639447f92af2c3978a9e
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: NewDataPanel
+  - hash:
+      serializedVersion: 2
       Hash: ae83e830e7a90c0aff918c4c2e520825
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -605,6 +655,12 @@ ScriptsOnlyBuild:
     className: Benchmark04
   - hash:
       serializedVersion: 2
+      Hash: 6f6ed7e3718a9f8e17e39c3398a39e5e
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ModeMenuGenerate
+  - hash:
+      serializedVersion: 2
       Hash: 88cc9df3c6fc697bfbeacd24c0d6f2d7
     assemblyName: UnityEngine.TestRunner.dll
     namespaceName: UnityEngine.TestTools
@@ -617,10 +673,22 @@ ScriptsOnlyBuild:
     className: TextMeshSpawner
   - hash:
       serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: MouseEventsController
+  - hash:
+      serializedVersion: 2
       Hash: e63944317d2f5958e31963668bb29158
     assemblyName: Assembly-CSharp.dll
     namespaceName: TMPro.Examples
     className: VertexShakeB
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ModeController
   - hash:
       serializedVersion: 2
       Hash: 5bb0c23ac2810973880e592724a69354
@@ -665,7 +733,7 @@ ScriptsOnlyBuild:
     className: TMP_StyleSheet
   - hash:
       serializedVersion: 2
-      Hash: 1f1339e77580cdfe1f9fbbcd20af5110
+      Hash: ced6702130aee9fe0779a8a10fc8a3dc
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: DisplaySpawnController
@@ -795,6 +863,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
+  - hash:
+      serializedVersion: 2
+      Hash: 6917b06a625cb001950e603f5a3abce4
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: AnimatedPanel
   platform: 13
   scenePathNames:
   - Assets/Scenes/SampleScene.unity

@@ -70,6 +70,11 @@
     <Compile Include="Assets\Demigiant\DOTween\Modules\DOTweenModuleUI.cs" />
     <Compile Include="Assets\Demigiant\DOTween\Modules\DOTweenModuleUnityVersion.cs" />
     <Compile Include="Assets\Demigiant\DOTween\Modules\DOTweenModuleUtils.cs" />
+    <Compile Include="Assets\MenuButton.cs" />
+    <Compile Include="Assets\ModeController.cs" />
+    <Compile Include="Assets\ModeMenuGenerate.cs" />
+    <Compile Include="Assets\NewDataPanel.cs" />
+    <Compile Include="Assets\Scripts\AnimatedPanel.cs" />
     <Compile Include="Assets\Scripts\CalendarGenerate.cs" />
     <Compile Include="Assets\Scripts\Data.cs" />
     <Compile Include="Assets\Scripts\DataLoader.cs" />
@@ -77,6 +82,7 @@
     <Compile Include="Assets\Scripts\MouseEventsController.cs" />
     <Compile Include="Assets\Scripts\SwitchWine.cs" />
     <Compile Include="Assets\Scripts\TestText.cs" />
+    <Compile Include="Assets\Scripts\UIBehaviour.cs" />
     <Compile Include="Assets\Scripts\UIController.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
@@ -117,6 +123,7 @@
     <None Include="Assets\TextMesh Pro\Examples &amp; Extras\Fonts\Oswald-Bold - OFL.txt" />
     <None Include="Assets\TextMesh Pro\Examples &amp; Extras\Fonts\Anton OFL.txt" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
+    <None Include="Assets\BlurShader\NewUnlitShader.shader" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface.shader" />
     <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap-Custom-Atlas.shader" />

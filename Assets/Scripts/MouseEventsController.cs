@@ -96,13 +96,12 @@ public class MouseEventsController : MonoBehaviour
                     OnDisplayChange.Invoke(ChangeDisplaySide.Right);
                 }
                 else
-                if (deltaY <= 0.1f && deltaY >= -0.1f)
+                if (deltaX <= 0.1f && deltaX >= -0.1f)
                 {
                     OnDisplayChange.Invoke(ChangeDisplaySide.Stay);
                 }
             }
 
-            Debug.Log("Сброс");
             canMovingX = false;
             canMovingY = false;
         }
@@ -124,6 +123,10 @@ public class MouseEventsController : MonoBehaviour
 
                 SwipeCalculation();
 
+                
+
+                mouseLastPos = Input.GetTouch(0).position;
+
                 if (canMovingX)
                 {
                     OnPressedX.Invoke((Camera.main.ScreenToWorldPoint(Input.mousePosition).x - startMouseCoordinate.x) * 130,
@@ -134,26 +137,49 @@ public class MouseEventsController : MonoBehaviour
                     OnPressedY.Invoke((Camera.main.ScreenToWorldPoint(Input.mousePosition).y - startMouseCoordinate.y) * 130,
                         (Camera.main.ScreenToWorldPoint(Input.mousePosition).x - startMouseCoordinate.x) * 130);
                 }
-
-                mouseLastPos = Input.GetTouch(0).position;
             }
 
             if (Input.GetTouch(0).phase == TouchPhase.Ended)
             {
-                if (deltaY < -10f)
+                if (canMovingY)
                 {
-                    deltaY = 0;
-                    OnDisplayChange?.Invoke(ChangeDisplaySide.Down);
+                    if (deltaY < -10f)
+                    {
+                        deltaY = 0;
+                        OnDisplayChange?.Invoke(ChangeDisplaySide.Down);
+                    }
+                    else
+                    if (deltaY > 10f)
+                    {
+                        deltaY = 0;
+                        OnDisplayChange?.Invoke(ChangeDisplaySide.Up);
+                    }
+                    else
+                    if (deltaY > -10f && deltaY < 10f)
+                    {
+                        deltaY = 0;
+                        OnDisplayChange?.Invoke(ChangeDisplaySide.Stay);
+                    }
                 }
-                else
-                if (deltaY > 10f)
+                if (canMovingX)
                 {
-                    deltaY = 0;
-                    OnDisplayChange?.Invoke(ChangeDisplaySide.Up);
-                }
-                else
-                {
-                    OnDisplayChange.Invoke(ChangeDisplaySide.Stay);
+                    if (deltaX < -10f)
+                    {
+                        deltaX = 0;
+                        OnDisplayChange?.Invoke(ChangeDisplaySide.Right);
+                    }
+                    else
+                    if (deltaX > 10f)
+                    {
+                        deltaX = 0;
+                        OnDisplayChange?.Invoke(ChangeDisplaySide.Left);
+                    }
+                    else
+                    if (deltaX > -10f && deltaY < 10f)
+                    {
+                        deltaX = 0;
+                        OnDisplayChange.Invoke(ChangeDisplaySide.Stay);
+                    }
                 }
 
                 canMovingX = false;
