@@ -4,23 +4,30 @@ using UnityEngine;
 
 public class UIController : MonoBehaviour
 {
-    public MouseEventsController mouseEvents;
+    public UIBehaviour uiBehaviour;
     public AnimatedPanel newCategoryButton;
 
     private void Awake()
     {
-        mouseEvents.OnDisplayChange += AddNewCategoryButton;
+        uiBehaviour.OnChangeMode += AddNewCategoryButtonVisible;
     }
 
-    private void AddNewCategoryButton(ChangeDisplaySide state)
+    private void AddNewCategoryButtonVisible(UIMode state)
     {
-        if (state == ChangeDisplaySide.Left)
+
+        if (state == UIMode.Menu)
         {
             newCategoryButton.Show();
         }
-        if (state == ChangeDisplaySide.Right)
+        if (state == UIMode.Main)
         {
             newCategoryButton.Hide();
         }
+
+    }
+
+    private void OnDestroy()
+    {
+        uiBehaviour.OnChangeMode -= AddNewCategoryButtonVisible;
     }
 }

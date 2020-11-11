@@ -46,6 +46,7 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.Image
     - UnityEngine.UI.InputField
     - UnityEngine.UI.Mask
+    - UnityEngine.UI.Outline
     - UnityEngine.UI.ScrollRect
     - UnityEngine.UI.Scrollbar
     - UnityEngine.UI.Text
@@ -75,73 +76,75 @@ ScriptsOnlyBuild:
     - Class: 109
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11186}
+      Script: {instanceID: 11172}
     - Class: 114
-      Script: {instanceID: 11350}
+      Script: {instanceID: 11190}
     - Class: 114
-      Script: {instanceID: 11352}
+      Script: {instanceID: 11356}
     - Class: 114
-      Script: {instanceID: 11392}
+      Script: {instanceID: 11358}
     - Class: 114
-      Script: {instanceID: 11418}
+      Script: {instanceID: 11398}
     - Class: 114
-      Script: {instanceID: 11494}
+      Script: {instanceID: 11424}
     - Class: 114
-      Script: {instanceID: 11614}
+      Script: {instanceID: 11502}
     - Class: 114
-      Script: {instanceID: 11692}
+      Script: {instanceID: 11622}
     - Class: 114
-      Script: {instanceID: 11784}
+      Script: {instanceID: 11700}
     - Class: 114
-      Script: {instanceID: 11812}
+      Script: {instanceID: 11792}
     - Class: 114
-      Script: {instanceID: 11948}
+      Script: {instanceID: 11820}
     - Class: 114
-      Script: {instanceID: 11982}
+      Script: {instanceID: 11960}
     - Class: 114
-      Script: {instanceID: 12036}
+      Script: {instanceID: 11994}
+    - Class: 114
+      Script: {instanceID: 12016}
     - Class: 114
       Script: {instanceID: 12050}
     - Class: 114
-      Script: {instanceID: 12102}
+      Script: {instanceID: 12064}
     - Class: 114
-      Script: {instanceID: 12192}
+      Script: {instanceID: 12116}
     - Class: 114
-      Script: {instanceID: 12266}
+      Script: {instanceID: 12206}
     - Class: 114
-      Script: {instanceID: 12286}
+      Script: {instanceID: 12280}
     - Class: 114
-      Script: {instanceID: 12384}
+      Script: {instanceID: 12300}
     - Class: 114
-      Script: {instanceID: 12414}
+      Script: {instanceID: 12398}
     - Class: 114
-      Script: {instanceID: 12418}
+      Script: {instanceID: 12430}
     - Class: 114
-      Script: {instanceID: 12432}
+      Script: {instanceID: 12444}
     - Class: 114
-      Script: {instanceID: 12630}
+      Script: {instanceID: 12644}
     - Class: 114
-      Script: {instanceID: 12686}
+      Script: {instanceID: 12700}
     - Class: 114
-      Script: {instanceID: 12696}
+      Script: {instanceID: 12710}
     - Class: 114
-      Script: {instanceID: 12718}
+      Script: {instanceID: 12732}
     - Class: 114
-      Script: {instanceID: 12748}
+      Script: {instanceID: 12762}
     - Class: 114
-      Script: {instanceID: 12778}
+      Script: {instanceID: 12792}
     - Class: 114
-      Script: {instanceID: 12860}
-    - Class: 114
-      Script: {instanceID: 12868}
+      Script: {instanceID: 12874}
     - Class: 114
       Script: {instanceID: 12882}
     - Class: 114
-      Script: {instanceID: 12982}
+      Script: {instanceID: 12896}
     - Class: 114
-      Script: {instanceID: 13082}
+      Script: {instanceID: 12996}
     - Class: 114
-      Script: {instanceID: 16928}
+      Script: {instanceID: 13036}
+    - Class: 114
+      Script: {instanceID: 13096}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -163,13 +166,19 @@ ScriptsOnlyBuild:
   scriptHashData:
   - hash:
       serializedVersion: 2
+      Hash: 5ad4aa237d47ac2bab17bacb672edf7a
+    assemblyName: UnityEngine.UI.dll
+    namespaceName: UnityEngine.UI
+    className: HorizontalLayoutGroup
+  - hash:
+      serializedVersion: 2
       Hash: 4bc4346a71a8df53a6b106f68ef3a190
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: CanvasScaler
   - hash:
       serializedVersion: 2
-      Hash: 3c08375166df118bd1801438fc36b92f
+      Hash: c42672c997f8be6b1aa86a927ebea785
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TMP_SelectionCaret
@@ -193,6 +202,12 @@ ScriptsOnlyBuild:
     className: TMP_ScrollbarEventHandler
   - hash:
       serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: UnityEngine.TestRunner.dll
+    namespaceName: UnityEngine.TestTools.TestRunner.Callbacks
+    className: PlayerQuitHandler
+  - hash:
+      serializedVersion: 2
       Hash: c3d3430df9e3ea95e3e3d587961390fb
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
@@ -205,7 +220,7 @@ ScriptsOnlyBuild:
     className: ActivationTrack
   - hash:
       serializedVersion: 2
-      Hash: 72712369a7c681ad84fc255a5ec0b333
+      Hash: aeb62f729c52c814dec86c47dcac1471
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: Text
@@ -235,7 +250,7 @@ ScriptsOnlyBuild:
     className: TouchInputModule
   - hash:
       serializedVersion: 2
-      Hash: 8e0313c6f5e2ce35991fec2d64f8eaab
+      Hash: 89f9a1b4c64db9559e39f4a2e3bfaadd
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: Image
@@ -313,7 +328,7 @@ ScriptsOnlyBuild:
     className: RectMask2D
   - hash:
       serializedVersion: 2
-      Hash: 4e9333594897a1fb8b136ad2eae996c7
+      Hash: d941ab6dd93d37ffdf2277f2ea2375a0
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TMP_SubMeshUI
@@ -397,7 +412,7 @@ ScriptsOnlyBuild:
     className: Benchmark01
   - hash:
       serializedVersion: 2
-      Hash: 3fb23bc52f6adab36a0cf2277913ea4a
+      Hash: 530f5d9d27c5a38ce79f7a40bf9616ba
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: DataLoader
@@ -421,13 +436,19 @@ ScriptsOnlyBuild:
     className: SignalTrack
   - hash:
       serializedVersion: 2
+      Hash: 6917b06a625cb001950e603f5a3abce4
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: AnimatedPanel
+  - hash:
+      serializedVersion: 2
       Hash: 3375c3d749f8f4cad889721b431bdc27
     assemblyName: Assembly-CSharp.dll
     namespaceName: TMPro.Examples
     className: CameraController
   - hash:
       serializedVersion: 2
-      Hash: 8ea92780f28687fa7fd3b9a3b68ddc3e
+      Hash: 5d28aa58f22308f1455de8cbd2d2d647
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: SwitchWine
@@ -487,13 +508,13 @@ ScriptsOnlyBuild:
     className: Button
   - hash:
       serializedVersion: 2
-      Hash: feb9a5a121d15fa3654d4e50a5233045
+      Hash: f84d945e5e1ca985698660fc26e9657f
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: RawImage
   - hash:
       serializedVersion: 2
-      Hash: c97ba94c9107a89079f25fbb33d8e004
+      Hash: 57e0fc2bd54e2521297ca45b45f4d2a7
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: UIBehaviour
@@ -533,12 +554,6 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: TMPro
     className: TMP_DigitValidator
-  - hash:
-      serializedVersion: 2
-      Hash: 5ad4aa237d47ac2bab17bacb672edf7a
-    assemblyName: UnityEngine.UI.dll
-    namespaceName: UnityEngine.UI
-    className: HorizontalLayoutGroup
   - hash:
       serializedVersion: 2
       Hash: 35a9693c388776aaf487636491a20f11
@@ -613,7 +628,7 @@ ScriptsOnlyBuild:
     className: TMP_TextSelector_B
   - hash:
       serializedVersion: 2
-      Hash: 3b760e6526e13f7504f59e210145899a
+      Hash: 8001a5f7502aab37e42206da015e6914
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TextMeshProUGUI
@@ -631,7 +646,7 @@ ScriptsOnlyBuild:
     className: AudioTrack
   - hash:
       serializedVersion: 2
-      Hash: 98d2a4abd074639447f92af2c3978a9e
+      Hash: 5821c7afa09588a1263b3e3ad6e3a257
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: NewDataPanel
@@ -757,7 +772,7 @@ ScriptsOnlyBuild:
     className: TextMeshProFloatingText
   - hash:
       serializedVersion: 2
-      Hash: df434544c9f7b33d1cc7e635b180d279
+      Hash: 21d73eda81c18eacd2c91ad5dfaf2e32
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TextMeshPro
@@ -863,12 +878,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
-  - hash:
-      serializedVersion: 2
-      Hash: 6917b06a625cb001950e603f5a3abce4
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: AnimatedPanel
   platform: 13
   scenePathNames:
   - Assets/Scenes/SampleScene.unity

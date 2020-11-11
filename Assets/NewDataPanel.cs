@@ -4,7 +4,10 @@ using UnityEngine.UI;
 
 public class NewDataPanel : MonoBehaviour
 {
+    [Header("Данные новой категории:")]
     public Text categoryName;
+    public Sprite categoryIcon;
+    [Header("Ссылки на объекты")]
     public Button newCategoryButton;
 
     public event Action<string> OnNewCategoryButtonClick;

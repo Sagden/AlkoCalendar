@@ -3,11 +3,11 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UIBehaviour : MonoBehaviour
 {
     public MouseEventsController mouseEventsController;
-    public ModeController modeController;
 
     [Space]
 
@@ -15,7 +15,10 @@ public class UIBehaviour : MonoBehaviour
     private Vector2 mainDisplayNextPosition;
     private Vector2 mainDisplayStartPosition;
 
+    [Space]
+
     public RectTransform menuDisplay;
+    public ScrollRect menuScrollRect;
     private Vector2 menuDisplayNextPosition;
     private Vector2 menuDisplayStartPosition;
 
@@ -57,14 +60,18 @@ public class UIBehaviour : MonoBehaviour
 
         if (Input.GetMouseButtonUp(0))
         {
+            menuScrollRect.enabled = true;
+
             mainDisplay.transform.DOLocalMove(mainDisplayNextPosition, 0.7f).OnComplete(() => movedMode = MovedMove.Null);
             menuDisplay.transform.DOLocalMove(menuDisplayNextPosition, 0.7f).OnComplete(() => movedMode = MovedMove.Null);
         }
-    } 
+    }
     //TODO: Сделать для Android
 
     private void canvasMovedX(float offsetX, float offsetY)
     {
+        menuScrollRect.enabled = false;
+
         if (movedMode == MovedMove.Null)
             movedMode = MovedMove.xMode;
 
@@ -100,6 +107,7 @@ public class UIBehaviour : MonoBehaviour
 
     private void DisplayChange(ChangeDisplaySide state)
     {
+
         if (movedMode == MovedMove.xMode)
         {
             DisplayChangeX(state);
@@ -131,6 +139,7 @@ public class UIBehaviour : MonoBehaviour
                 DisplayChangeY(state);
             }
         }
+
     }
 
     private void DisplayChangeY(ChangeDisplaySide state)
@@ -146,13 +155,17 @@ public class UIBehaviour : MonoBehaviour
 
         mainDisplay.transform.DOLocalMove(mainDisplayNextPosition, 0.7f);
         OnChangeDisplayY.Invoke(state);
+
     }
+
     private void DisplayChangeX(ChangeDisplaySide state)
     {
 
         if (currentMode == UIMode.Main && state == ChangeDisplaySide.Left)
         {
             currentMode = UIMode.Menu;
+
+            OnChangeMode.Invoke(currentMode);
 
             mainDisplayNextPosition = new Vector2(mainDisplayNextPosition.x + 864, mainDisplayNextPosition.y);
             menuDisplayNextPosition = new Vector2(menuDisplayNextPosition.x + 864, menuDisplayNextPosition.y);
@@ -162,13 +175,15 @@ public class UIBehaviour : MonoBehaviour
         {
             currentMode = UIMode.Main;
 
+            OnChangeMode.Invoke(currentMode);
+
             mainDisplayNextPosition = new Vector2(mainDisplayNextPosition.x - 864, mainDisplayNextPosition.y);
             menuDisplayNextPosition = new Vector2(menuDisplayNextPosition.x - 864, menuDisplayNextPosition.y);
         }
 
-        Debug.Log(state);
         mainDisplay.transform.DOLocalMove(mainDisplayNextPosition, 0.7f).OnComplete(() => movedMode = MovedMove.Null);
         menuDisplay.transform.DOLocalMove(menuDisplayNextPosition, 0.7f).OnComplete(() => movedMode = MovedMove.Null);
+
     }
 }
 

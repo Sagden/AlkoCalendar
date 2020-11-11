@@ -16,6 +16,18 @@ public class DataLoader : MonoBehaviour
 
     private void Awake()
     {
+        DatasInit();
+    }
+
+    private void Start()
+    {
+        Application.targetFrameRate = 60;
+
+        newDataPanel.OnNewCategoryButtonClick += AddNewData;
+    }
+
+    private void DatasInit()
+    {
         for (int i = 0; i < 100; i++)
         {
             if (i == 0)
@@ -30,27 +42,6 @@ public class DataLoader : MonoBehaviour
             if (LoadGame(i) != null)
                 datas.Add(LoadGame(i));
         }
-
-        //InitData(0);
-    }
-
-    //public void InitData(int index)
-    //{
-    //    if (LoadGame(index) != null)
-    //    {
-    //        datas.Add(LoadGame(index));
-    //    }
-    //    else
-    //    {
-    //        datas.Add(new Data() { date = new List<Year>() });
-    //    }
-    //}
-
-    private void Start()
-    {
-        Application.targetFrameRate = 60;
-
-        newDataPanel.OnNewCategoryButtonClick += AddNewData;
     }
 
     //Сохранение данных в файл

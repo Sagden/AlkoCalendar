@@ -59,7 +59,6 @@ public class SwitchWine : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
             if (Input.GetTouch(0).phase == TouchPhase.Moved)
             {
                 pressed = false;
-                TestText.text = "Moved";
             }
         }
     }
@@ -82,7 +81,8 @@ public class SwitchWine : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 
         dateTextContainer.color = colorOn;
 
-        image.sprite = spriteFull;
+        GetComponent<Outline>().enabled = true;
+        //image.sprite = spriteFull;
     }
 
     public void SwitchOff()
@@ -91,7 +91,9 @@ public class SwitchWine : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 
         dateTextContainer.color = colorOff;
 
-        image.sprite = spriteEmpty;
+        GetComponent<Outline>().enabled = false;
+
+        //image.sprite = spriteEmpty;
         wineGlassFull = false;
         pressed = false;
     }

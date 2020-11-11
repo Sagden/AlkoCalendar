@@ -4,14 +4,18 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class MenuButton : MonoBehaviour, IPointerDownHandler
+public class MenuButton : MonoBehaviour, IPointerClickHandler
 {
     public TMP_Text text;
     public int index;
 
-    public void OnPointerDown(PointerEventData eventData)
+    //public void OnPointerDown(PointerEventData eventData)
+    //{
+    //    //ModeController.SetMode(index);
+    //}
+
+    public void OnPointerClick(PointerEventData eventData)
     {
-        Debug.Log("cChange;");
         ModeController.SetMode(index);
     }
 }

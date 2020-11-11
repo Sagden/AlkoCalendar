@@ -1,6 +1,8 @@
 ﻿using System;
 using UnityEngine;
 
+
+//Хранит текущую выбранную категорию
 public class ModeController : MonoBehaviour
 {
     public static int currentModeIndex = 0;

@@ -82,6 +82,7 @@ public class DisplaySpawnController : MonoBehaviour
     {
         displayPref.month = dateTime.Month;
         displayPref.year = dateTime.Year;
+        displayPref.categoryName = dataLoader.datas[ModeController.currentModeIndex].nameCategory;
 
         newCalendar = Instantiate(displayPref, displaysContainer.transform);
 

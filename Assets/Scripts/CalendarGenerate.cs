@@ -9,6 +9,7 @@ public class CalendarGenerate : MonoBehaviour
 {
     public int month;
     public int year;
+    public string categoryName;
     public List<bool> isFullDay = new List<bool>();
     public List<SwitchWine> switchWines = new List<SwitchWine>();
     public event Action<CalendarGenerate> OnSaveChange;
@@ -19,6 +20,7 @@ public class CalendarGenerate : MonoBehaviour
     [SerializeField] private GameObject verticalGridContainer;
     [SerializeField] private TMP_Text monthTextContainer;
     [SerializeField] private TMP_Text yearTextContainer;
+    [SerializeField] private TMP_Text categoryTextContainer;
     [Space]
     public List<GameObject> weeklyViewPrefs = new List<GameObject>();
 
@@ -32,7 +34,9 @@ public class CalendarGenerate : MonoBehaviour
         HorizontalGridObjectsGenerate();
         ContentGenerate(date);
         MonthTextGenerate(month);
+
         yearTextContainer.text = year.ToString();
+        categoryTextContainer.text = categoryName;
     }
 
     //Расчет количества строк в месяце
