@@ -9,7 +9,7 @@ using UnityEngine;
 public class DataLoader : MonoBehaviour
 {
     public NewDataPanel newDataPanel;
-    [Space]
+    [Space][HideInInspector]
     public List<Data> datas;
 
     public event Action OnNewDataAdded;
@@ -63,13 +63,14 @@ public class DataLoader : MonoBehaviour
         return null;
     }
 
-    private void AddNewData(string nameCategory)
+    //Добавление новой категории
+    private void AddNewData(string nameCategory, Sprite sprite)
     {
         for (int i = 0; i < 100; i++)
         {
             if(LoadGame(i) == null)
             {
-                datas.Add(new Data() { nameCategory = nameCategory, date = new List<Year>() });
+                datas.Add(new Data() { nameCategory = nameCategory, icon = sprite, date = new List<Year>() });
                 SaveGame(i);
                 ModeController.SetMode(i);
 

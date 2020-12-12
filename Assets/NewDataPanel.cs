@@ -5,35 +5,29 @@ using UnityEngine.UI;
 public class NewDataPanel : MonoBehaviour
 {
     [Header("Данные новой категории:")]
-    public Text categoryName;
+    public InputField inputField;
     public Sprite categoryIcon;
-    [Header("Ссылки на объекты")]
+
+    [Header("Ссылка на кнопку завершающую создание категории")]
     public Button newCategoryButton;
 
-    public event Action<string> OnNewCategoryButtonClick;
+    public event Action<string, Sprite> OnNewCategoryButtonClick;
 
     private void Start()
     {
         newCategoryButton.onClick.AddListener(NewCategoryButtonClick);
     }
 
-    public void Switch()
-    {
-        if (gameObject.activeSelf == true)
-        {
-            gameObject.SetActive(false);
-        }
-        else
-        {
-            gameObject.SetActive(true);
-        }
-    }
 
     private void NewCategoryButtonClick()
     {
-        if (categoryName.text != "")
+        if (inputField.text != "")
         {
-            OnNewCategoryButtonClick.Invoke(categoryName.text);
+
+            OnNewCategoryButtonClick.Invoke(inputField.text, categoryIcon);
+
+            inputField.text = "";
+            gameObject.GetComponent<AnimatedPanel>().Hide();
         }
     }
 

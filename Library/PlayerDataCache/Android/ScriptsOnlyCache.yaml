@@ -5,6 +5,7 @@ ScriptsOnlyBuild:
     - CalendarGenerate
     - DataLoader
     - DisplaySpawnController
+    - IconPanel
     - MenuButton
     - ModeController
     - ModeMenuGenerate
@@ -88,63 +89,65 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11424}
     - Class: 114
-      Script: {instanceID: 11502}
+      Script: {instanceID: 11500}
     - Class: 114
-      Script: {instanceID: 11622}
+      Script: {instanceID: 11620}
     - Class: 114
-      Script: {instanceID: 11700}
+      Script: {instanceID: 11698}
     - Class: 114
-      Script: {instanceID: 11792}
+      Script: {instanceID: 11790}
     - Class: 114
-      Script: {instanceID: 11820}
+      Script: {instanceID: 11818}
     - Class: 114
-      Script: {instanceID: 11960}
+      Script: {instanceID: 11958}
     - Class: 114
-      Script: {instanceID: 11994}
+      Script: {instanceID: 11992}
     - Class: 114
-      Script: {instanceID: 12016}
+      Script: {instanceID: 12014}
     - Class: 114
-      Script: {instanceID: 12050}
+      Script: {instanceID: 12048}
     - Class: 114
-      Script: {instanceID: 12064}
+      Script: {instanceID: 12062}
     - Class: 114
-      Script: {instanceID: 12116}
+      Script: {instanceID: 12114}
     - Class: 114
-      Script: {instanceID: 12206}
+      Script: {instanceID: 12204}
     - Class: 114
-      Script: {instanceID: 12280}
+      Script: {instanceID: 12278}
     - Class: 114
-      Script: {instanceID: 12300}
+      Script: {instanceID: 12298}
     - Class: 114
-      Script: {instanceID: 12398}
+      Script: {instanceID: 12396}
     - Class: 114
-      Script: {instanceID: 12430}
+      Script: {instanceID: 12428}
     - Class: 114
-      Script: {instanceID: 12444}
+      Script: {instanceID: 12442}
     - Class: 114
-      Script: {instanceID: 12644}
+      Script: {instanceID: 12642}
     - Class: 114
-      Script: {instanceID: 12700}
+      Script: {instanceID: 12698}
     - Class: 114
-      Script: {instanceID: 12710}
+      Script: {instanceID: 12708}
     - Class: 114
-      Script: {instanceID: 12732}
+      Script: {instanceID: 12730}
     - Class: 114
-      Script: {instanceID: 12762}
+      Script: {instanceID: 12760}
     - Class: 114
-      Script: {instanceID: 12792}
+      Script: {instanceID: 12790}
     - Class: 114
-      Script: {instanceID: 12874}
+      Script: {instanceID: 12872}
     - Class: 114
-      Script: {instanceID: 12882}
+      Script: {instanceID: 12880}
     - Class: 114
-      Script: {instanceID: 12896}
+      Script: {instanceID: 12894}
     - Class: 114
-      Script: {instanceID: 12996}
+      Script: {instanceID: 12994}
     - Class: 114
-      Script: {instanceID: 13036}
+      Script: {instanceID: 13034}
     - Class: 114
-      Script: {instanceID: 13096}
+      Script: {instanceID: 13094}
+    - Class: 114
+      Script: {instanceID: 27714}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -454,7 +457,7 @@ ScriptsOnlyBuild:
     className: SwitchWine
   - hash:
       serializedVersion: 2
-      Hash: 6aa16886c8ebe9b9275e86440df06537
+      Hash: f93f1319c9e7b691f7a969740a6ca619
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: UIController
@@ -646,7 +649,7 @@ ScriptsOnlyBuild:
     className: AudioTrack
   - hash:
       serializedVersion: 2
-      Hash: 5821c7afa09588a1263b3e3ad6e3a257
+      Hash: a4702f03dd99a527140f31e46ea8028e
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: NewDataPanel
@@ -736,7 +739,7 @@ ScriptsOnlyBuild:
     className: MarkerTrack
   - hash:
       serializedVersion: 2
-      Hash: bc2206899e1dddeb22f4b61fb11e67ad
+      Hash: 41c94008c4de2b23903f5261ea539191
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: CalendarGenerate
@@ -748,7 +751,7 @@ ScriptsOnlyBuild:
     className: TMP_StyleSheet
   - hash:
       serializedVersion: 2
-      Hash: ced6702130aee9fe0779a8a10fc8a3dc
+      Hash: d2f27eeb5f06b66773743d4b0e39d99a
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: DisplaySpawnController
@@ -878,6 +881,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
+  - hash:
+      serializedVersion: 2
+      Hash: 64c5b1c841b74130598d1a3cbdd07a17
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: IconPanel
   platform: 13
   scenePathNames:
   - Assets/Scenes/SampleScene.unity

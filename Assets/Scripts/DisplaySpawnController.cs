@@ -6,7 +6,6 @@ using UnityEngine;
 public class DisplaySpawnController : MonoBehaviour
 {
     public DataLoader dataLoader;
-    public DataLoader dataLoader2;
     public GameObject displaysContainer;
     public UIBehaviour uiBehaviour;
     public ModeController modeController;
@@ -24,19 +23,6 @@ public class DisplaySpawnController : MonoBehaviour
         {
             currentDisplayIndex = value;
             CheckCreateCalendar();
-        }
-    }
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.K))
-        {
-            dataLoader = dataLoader2;
-            foreach (CalendarGenerate calendarGenerate in displaysList)
-                Destroy(calendarGenerate.gameObject);
-            displaysList.Clear();
-            displaysContainer.transform.localPosition = Vector3.zero;
-            DisplaysInit();
         }
     }
 
@@ -71,9 +57,9 @@ public class DisplaySpawnController : MonoBehaviour
 
     private void DisplaysInit()
     {
-        displaysList.Add(CreateCalendar(new DateTime(DateTime.Now.Year, DateTime.Now.Month - 1, 1), 1440));
+        displaysList.Add(CreateCalendar(GetPreviousMonthDateInt(), 1440));
         displaysList.Add(CreateCalendar(new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1), 0));
-        displaysList.Add(CreateCalendar(new DateTime(DateTime.Now.Year, DateTime.Now.Month + 1, 1), -1440));
+        displaysList.Add(CreateCalendar(GetNextMonthDateInt(), -1440));
 
         CurrentDisplayIndex = 1;
     }
@@ -189,7 +175,7 @@ public class DisplaySpawnController : MonoBehaviour
         }
     }
 
-    //Получить предыдущий месяц в displaysList
+    //Получить предыдущий месяц в displaysList относительно текущего на экране
     private DateTime GetPreviousMonthDate()
     {
         if(displaysList[0].month != 1)
@@ -201,7 +187,7 @@ public class DisplaySpawnController : MonoBehaviour
         return new DateTime(0, 0, 0);
     }
 
-    //Получить следующий месяц в displaysList
+    //Получить следующий месяц в displaysList относительно текущего на экране
     private DateTime GetNextMonthDate()
     {
         if (displaysList[displaysList.Count - 1].month != 12)
@@ -211,5 +197,23 @@ public class DisplaySpawnController : MonoBehaviour
             return new DateTime(displaysList[displaysList.Count - 1].year + 1, 1, 1);
 
         return new DateTime(0, 0, 0);
+    }
+
+    private DateTime GetPreviousMonthDateInt()
+    {
+
+        if (DateTime.Now.Month == 1)
+            return new DateTime(DateTime.Now.Year - 1, 12, 1);
+
+        return new DateTime(DateTime.Now.Year, DateTime.Now.Month - 1, 1);
+    }
+
+    private DateTime GetNextMonthDateInt()
+    {
+
+        if (DateTime.Now.Month == 12)
+            return new DateTime(DateTime.Now.Year + 1, 1, 1);
+
+        return new DateTime(DateTime.Now.Year, DateTime.Now.Month + 1, 1);
     }
 }
