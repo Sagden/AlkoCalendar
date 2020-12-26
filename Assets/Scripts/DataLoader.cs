@@ -9,8 +9,9 @@ using UnityEngine;
 public class DataLoader : MonoBehaviour
 {
     public NewDataPanel newDataPanel;
-    [Space]
+    [Space][SerializeField]
     public List<Data> datas;
+    public DataList dataList;
 
     public event Action OnNewDataAdded;
     public static event Action OnDeleteData;
@@ -35,13 +36,17 @@ public class DataLoader : MonoBehaviour
             {
                 if (LoadGame(0) == null)
                 {
+                    dataList.datas.Add(new Data() { date = new List<Year>(), nameCategory = "Категория по умолчанию" });
                     datas.Add(new Data() { date = new List<Year>(), nameCategory = "Категория по умолчанию" });
 
                     return;
                 }
             }
             if (LoadGame(i) != null)
+            {
+                dataList.datas.Add(LoadGame(i));
                 datas.Add(LoadGame(i));
+            }
         }
     }
 
@@ -107,5 +112,23 @@ public class DataLoader : MonoBehaviour
             OnDeleteData.Invoke();
 
         }
+    }
+
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.M))
+        {
+            SaveData();
+        }
+    }
+
+    private void SaveData()
+    {
+
+        string dataJson = JsonUtility.ToJson(dataList);
+
+        File.WriteAllText(Application.persistentDataPath + "/data.save", dataJson);
+
     }
 }
