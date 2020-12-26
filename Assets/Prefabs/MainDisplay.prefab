@@ -126,9 +126,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 607914addca9ed046b6b06d26fbb9b16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  month: 7
-  year: 2020
-  categoryName: 
+  month: 1
+  year: 2021
+  categoryName: 123123
+  categoryIcon: {fileID: 21300000, guid: 486aa311933d5644aa5baeea6c0e2f3a, type: 3}
   isFullDay: 
   switchWines: []
   horizontalGridPrefab: {fileID: 1322051914382578380, guid: a9a30b6996c2ca64cba9ad8cf938fb92,

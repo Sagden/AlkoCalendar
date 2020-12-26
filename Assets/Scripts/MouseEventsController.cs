@@ -191,7 +191,7 @@ public class MouseEventsController : MonoBehaviour
     private void SwipeCalculation()
     {
         if ((Mathf.Abs(deltaX) > 0.01f || Mathf.Abs(deltaY) > 0.01f) && canMovingX == false && canMovingY == false)
-            if (Mathf.Abs(deltaX) > Mathf.Abs(deltaY) - 3)
+            if (Mathf.Abs(deltaX) > Mathf.Abs(deltaY) - 1)
                 canMovingX = true;
             else
                 canMovingY = true;

@@ -10,6 +10,7 @@ public class CalendarGenerate : MonoBehaviour
     public int month;
     public int year;
     public string categoryName;
+    public Sprite categoryIcon;
     public List<bool> isFullDay = new List<bool>();
     public List<SwitchWine> switchWines = new List<SwitchWine>();
     public event Action<CalendarGenerate> OnSaveChange;
@@ -89,6 +90,7 @@ public class CalendarGenerate : MonoBehaviour
                 {
                     var switchWine = Instantiate(wineGlass, horizontalPrefs[0].transform).GetComponent<SwitchWine>();
                     switchWine.Index = count;
+                    switchWine.image.sprite = categoryIcon;
                     switchWines.Add(switchWine);
 
                     switchWines[count].OnSwitchOn += ChangeSwitchWineState;
@@ -102,6 +104,7 @@ public class CalendarGenerate : MonoBehaviour
                 {
                     var switchWine = Instantiate(wineGlass, horizontalPrefs[0].transform).GetComponent<SwitchWine>();
                     switchWine.Index = count;
+                    switchWine.image.sprite = categoryIcon;
                     switchWines.Add(switchWine);
                     isFullDay.Add(false);
                     switchWines[count].OnSwitchOn += ChangeSwitchWineState;
@@ -124,6 +127,7 @@ public class CalendarGenerate : MonoBehaviour
                     {
                         var switchWine = Instantiate(wineGlass, horizontalPrefs[i].transform).GetComponent<SwitchWine>();
                         switchWine.Index = count;
+                        switchWine.image.sprite = categoryIcon;
                         switchWines.Add(switchWine);
 
                         switchWines[count].OnSwitchOn += ChangeSwitchWineState;
@@ -137,6 +141,7 @@ public class CalendarGenerate : MonoBehaviour
                     {
                         var switchWine = Instantiate(wineGlass, horizontalPrefs[i].transform).GetComponent<SwitchWine>();
                         switchWine.Index = count;
+                        switchWine.image.sprite = categoryIcon;
                         switchWines.Add(switchWine);
                         isFullDay.Add(false);
                         switchWines[count].OnSwitchOn += ChangeSwitchWineState;

@@ -16,6 +16,7 @@ public class ModeMenuGenerate : MonoBehaviour
     private void Start()
     {
         dataLoader.OnNewDataAdded += Generate;
+        DataLoader.OnDeleteData += Generate;
 
         Generate();
     }
@@ -36,6 +37,7 @@ public class ModeMenuGenerate : MonoBehaviour
             MenuButton newButton = Instantiate(menuButtonPrefab, buttonsContentContainer);
             newButton.index = i;
             newButton.text.text = dataLoader.LoadGame(i).nameCategory;
+            if (dataLoader.LoadGame(i).icon != null) newButton.image.sprite = dataLoader.LoadGame(i).icon;
             menuButtonObjects.Add(newButton);
         }
     }
@@ -43,5 +45,6 @@ public class ModeMenuGenerate : MonoBehaviour
     private void OnDestroy()
     {
         dataLoader.OnNewDataAdded -= Generate;
+        DataLoader.OnDeleteData -= Generate;
     }
 }

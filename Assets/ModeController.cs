@@ -9,14 +9,6 @@ public class ModeController : MonoBehaviour
 
     public static event Action OnChangeMode;
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Z))
-        {
-            currentModeIndex++;
-            OnChangeMode?.Invoke();
-        }
-    }
 
     public static void SetMode(int index)
     {

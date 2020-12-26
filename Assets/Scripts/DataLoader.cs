@@ -9,10 +9,11 @@ using UnityEngine;
 public class DataLoader : MonoBehaviour
 {
     public NewDataPanel newDataPanel;
-    [Space][HideInInspector]
+    [Space]
     public List<Data> datas;
 
     public event Action OnNewDataAdded;
+    public static event Action OnDeleteData;
 
     private void Awake()
     {
@@ -34,7 +35,7 @@ public class DataLoader : MonoBehaviour
             {
                 if (LoadGame(0) == null)
                 {
-                    datas.Add(new Data() { date = new List<Year>() });
+                    datas.Add(new Data() { date = new List<Year>(), nameCategory = "Категория по умолчанию" });
 
                     return;
                 }
@@ -78,6 +79,33 @@ public class DataLoader : MonoBehaviour
 
                 return;
             }
+        }
+    }
+
+    //Удаление категории
+    public static void DeleteData(int index)
+    {
+
+        if (File.Exists(Application.persistentDataPath + "/" + index.ToString() + ".save"))
+        {
+            File.Delete(Application.persistentDataPath + "/" + index.ToString() + ".save");
+
+            //Попытка сделать смещение категорий
+            for (int i = index + 1; i < 200; i++)
+            {
+
+                if (File.Exists(Application.persistentDataPath + "/" + i.ToString() + ".save"))
+                {
+                    File.Move(Application.persistentDataPath + "/" + i.ToString() + ".save", Application.persistentDataPath + "/" + (i - 1).ToString() + ".save");
+                }
+                else
+                {
+                    break;
+                }
+            }
+
+            OnDeleteData.Invoke();
+
         }
     }
 }

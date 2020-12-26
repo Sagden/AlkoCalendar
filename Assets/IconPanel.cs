@@ -16,21 +16,31 @@ public class IconPanel : MonoBehaviour
     public Transform iconPref;
     public Transform iconEmptyPref;
 
+    [Header("Контроллер главный")]
+    public NewDataPanel dataPanel;
+
+
     private void Start()
     {
-        for(int i = 0; i < Mathf.CeilToInt((float)icons.Count / 8); i++)
+        IconListGeneration();
+    }
+
+    private void IconListGeneration()
+    {
+        for (int i = 0; i < Mathf.CeilToInt((float)icons.Count / 8); i++)
         {
 
             Transform horizontalObj = Instantiate(horizontalPref, contentObj);
 
-            for(int o = 0; o < 8; o++)
+            for (int o = 0; o < 8; o++)
             {
-                
+
                 if ((i * 8 + o) < icons.Count)
                 {
 
                     Transform iconObj = Instantiate(iconPref, horizontalObj);
                     iconObj.GetComponent<Image>().sprite = icons[i * 8 + o];
+                    iconObj.GetComponent<Icon>().OnClick += NewIconChoose;
 
                 }
                 else
@@ -41,5 +51,10 @@ public class IconPanel : MonoBehaviour
                 }
             }
         }
+    }
+
+    private void NewIconChoose(Sprite obj)
+    {
+        dataPanel.categoryIcon = obj;
     }
 }

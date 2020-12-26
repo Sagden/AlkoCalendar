@@ -11,6 +11,8 @@ public class DisplaySpawnController : MonoBehaviour
     public ModeController modeController;
     [Space]
     public CalendarGenerate displayPref;
+    [Header("Компонент содержащий все иконки (переделать на SO)")]
+    public IconPanel iconPanel;
 
     private CalendarGenerate newCalendar;
     [SerializeField]
@@ -69,6 +71,12 @@ public class DisplaySpawnController : MonoBehaviour
         displayPref.month = dateTime.Month;
         displayPref.year = dateTime.Year;
         displayPref.categoryName = dataLoader.datas[ModeController.currentModeIndex].nameCategory;
+
+        //Создание иконки
+        if (dataLoader.datas[ModeController.currentModeIndex].icon != null)
+            displayPref.categoryIcon = dataLoader.datas[ModeController.currentModeIndex].icon;
+        else
+            displayPref.categoryIcon = iconPanel.icons[0];
 
         newCalendar = Instantiate(displayPref, displaysContainer.transform);
 
