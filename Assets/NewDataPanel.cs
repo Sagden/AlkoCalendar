@@ -8,6 +8,10 @@ public class NewDataPanel : MonoBehaviour
     public InputField inputField;
     public Sprite categoryIcon;
 
+    [Header("Панели создания новой категории")]
+    public AnimatedPanel namePanel;
+    public AnimatedPanel iconPanel;
+
     [Header("Ссылка на кнопку завершающую создание категории")]
     public Button newCategoryButton;
 
@@ -28,6 +32,9 @@ public class NewDataPanel : MonoBehaviour
 
             inputField.text = "";
             gameObject.GetComponent<AnimatedPanel>().Hide();
+
+            namePanel.Show();
+            iconPanel.Hide();
         }
     }
 

@@ -7,13 +7,16 @@ public class Icon : MonoBehaviour, IPointerClickHandler
 {
 
     public Image image;
+    public int id;
+    [Space]
+    public GameObject checkmark;
 
-    public event Action<Sprite> OnClick;
+    public event Action<Icon> OnClick;
 
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        OnClick.Invoke(image.sprite);
+        OnClick.Invoke(this);
     }
 
 }

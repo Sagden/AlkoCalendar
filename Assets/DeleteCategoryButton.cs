@@ -7,6 +7,6 @@ public class DeleteCategoryButton : MonoBehaviour, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        DataLoader.DeleteData(menuButton.index);
+        GameObject.FindObjectOfType<DataLoader>().DeleteData(menuButton.index);
     }
 }

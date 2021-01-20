@@ -4,6 +4,7 @@ ScriptsOnlyBuild:
     - AnimatedPanel
     - CalendarGenerate
     - DataLoader
+    - DeleteCategoryButton
     - DisplaySpawnController
     - Icon
     - IconPanel
@@ -38,8 +39,6 @@ ScriptsOnlyBuild:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
     - UnityEditor.TestTools.TestRunner.TestListCacheData
     - UnityEditor.TestTools.TestRunner.TestRun.TestJobDataHolder
-    UnityEditor.UI.dll:
-    - UnityEditor.UI.ImageEditor
     UnityEngine.UI.dll:
     - UnityEngine.EventSystems.EventSystem
     - UnityEngine.EventSystems.StandaloneInputModule
@@ -85,7 +84,9 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11174}
     - Class: 114
-      Script: {instanceID: 11194}
+      Script: {instanceID: 11192}
+    - Class: 114
+      Script: {instanceID: 11290}
     - Class: 114
       Script: {instanceID: 11360}
     - Class: 114
@@ -121,41 +122,41 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 12244}
     - Class: 114
-      Script: {instanceID: 12284}
+      Script: {instanceID: 12286}
     - Class: 114
-      Script: {instanceID: 12304}
+      Script: {instanceID: 12306}
     - Class: 114
-      Script: {instanceID: 12402}
+      Script: {instanceID: 12404}
     - Class: 114
-      Script: {instanceID: 12434}
+      Script: {instanceID: 12436}
     - Class: 114
-      Script: {instanceID: 12448}
+      Script: {instanceID: 12450}
     - Class: 114
-      Script: {instanceID: 12648}
-    - Class: 114
-      Script: {instanceID: 12704}
+      Script: {instanceID: 12650}
     - Class: 114
       Script: {instanceID: 12706}
     - Class: 114
-      Script: {instanceID: 12716}
+      Script: {instanceID: 12708}
     - Class: 114
-      Script: {instanceID: 12738}
+      Script: {instanceID: 12718}
     - Class: 114
-      Script: {instanceID: 12768}
+      Script: {instanceID: 12740}
     - Class: 114
-      Script: {instanceID: 12798}
+      Script: {instanceID: 12770}
     - Class: 114
-      Script: {instanceID: 12880}
+      Script: {instanceID: 12800}
     - Class: 114
-      Script: {instanceID: 12888}
+      Script: {instanceID: 12882}
     - Class: 114
-      Script: {instanceID: 12902}
+      Script: {instanceID: 12890}
     - Class: 114
-      Script: {instanceID: 13002}
+      Script: {instanceID: 12904}
     - Class: 114
-      Script: {instanceID: 13042}
+      Script: {instanceID: 13004}
     - Class: 114
-      Script: {instanceID: 13102}
+      Script: {instanceID: 13044}
+    - Class: 114
+      Script: {instanceID: 13104}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -211,6 +212,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TMP_Dropdown
+  - hash:
+      serializedVersion: 2
+      Hash: fec2e88201a0e4d7c6f18c6847286097
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: DeleteCategoryButton
   - hash:
       serializedVersion: 2
       Hash: e7a73f5f78ba6445195ec23b74a1ce2d
@@ -279,7 +286,7 @@ ScriptsOnlyBuild:
     className: TMP_InputField
   - hash:
       serializedVersion: 2
-      Hash: 894ebeab910f7b67e30c70391f61fdd1
+      Hash: 4deaf32ea7154ea8035f6a55111eaf30
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: MenuButton
@@ -423,7 +430,7 @@ ScriptsOnlyBuild:
     className: Benchmark01
   - hash:
       serializedVersion: 2
-      Hash: 530f5d9d27c5a38ce79f7a40bf9616ba
+      Hash: 32af76a0e39f944ad65a6294b3c0b843
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: DataLoader
@@ -459,7 +466,7 @@ ScriptsOnlyBuild:
     className: CameraController
   - hash:
       serializedVersion: 2
-      Hash: 5d28aa58f22308f1455de8cbd2d2d647
+      Hash: d5d5b97127f1f477c9d215ecebe48087
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: SwitchWine
@@ -531,7 +538,7 @@ ScriptsOnlyBuild:
     className: RawImage
   - hash:
       serializedVersion: 2
-      Hash: ca910f344cf61e78b3f04492ad1faa3e
+      Hash: f633c569bbcfec78fda2180e4f451cdf
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Icon
@@ -675,7 +682,7 @@ ScriptsOnlyBuild:
     className: IconPanel
   - hash:
       serializedVersion: 2
-      Hash: a4702f03dd99a527140f31e46ea8028e
+      Hash: d3c093312b1e8c6b5ce2866f7045cc57
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: NewDataPanel

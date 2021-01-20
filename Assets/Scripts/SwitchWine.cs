@@ -13,6 +13,8 @@ public class SwitchWine : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     [Space]
     public Sprite spriteEmpty, spriteFull;
     public Image image;
+    [Space]
+    public GameObject checkmarkImage;
 
     private bool wineGlassFull = false;
     public bool WineGlassFull { get => wineGlassFull; }
@@ -81,7 +83,8 @@ public class SwitchWine : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 
         dateTextContainer.color = colorOn;
 
-        GetComponent<Outline>().enabled = true;
+        checkmarkImage.SetActive(true);
+        //GetComponent<Outline>().enabled = true;
         //image.sprite = spriteFull;
     }
 
@@ -91,8 +94,8 @@ public class SwitchWine : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 
         dateTextContainer.color = colorOff;
 
-        GetComponent<Outline>().enabled = false;
-
+        checkmarkImage.SetActive(false);
+        //GetComponent<Outline>().enabled = false;
         //image.sprite = spriteEmpty;
         wineGlassFull = false;
         pressed = false;

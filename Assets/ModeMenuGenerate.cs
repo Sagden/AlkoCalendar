@@ -30,14 +30,12 @@ public class ModeMenuGenerate : MonoBehaviour
 
         menuButtonObjects.Clear();
 
-        for ( int i = 0; i < 50; i++ )
+        for ( int i = 0; i < dataLoader.dataList.datas.Count; i++ )
         {
-            if (dataLoader.LoadGame(i) == null) return;
-
             MenuButton newButton = Instantiate(menuButtonPrefab, buttonsContentContainer);
             newButton.index = i;
-            newButton.text.text = dataLoader.LoadGame(i).nameCategory;
-            if (dataLoader.LoadGame(i).icon != null) newButton.image.sprite = dataLoader.LoadGame(i).icon;
+            newButton.text.text = dataLoader.dataList.datas[i].nameCategory;
+            newButton.image.sprite = dataLoader.dataList.datas[i].icon;
             menuButtonObjects.Add(newButton);
         }
     }

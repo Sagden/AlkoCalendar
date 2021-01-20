@@ -70,11 +70,11 @@ public class DisplaySpawnController : MonoBehaviour
     {
         displayPref.month = dateTime.Month;
         displayPref.year = dateTime.Year;
-        displayPref.categoryName = dataLoader.datas[ModeController.currentModeIndex].nameCategory;
+        displayPref.categoryName = dataLoader.dataList.datas[ModeController.currentModeIndex].nameCategory;
 
         //Создание иконки
-        if (dataLoader.datas[ModeController.currentModeIndex].icon != null)
-            displayPref.categoryIcon = dataLoader.datas[ModeController.currentModeIndex].icon;
+        if (dataLoader.dataList.datas[ModeController.currentModeIndex].icon != null)
+            displayPref.categoryIcon = dataLoader.dataList.datas[ModeController.currentModeIndex].icon;
         else
             displayPref.categoryIcon = iconPanel.icons[0];
 
@@ -104,18 +104,18 @@ public class DisplaySpawnController : MonoBehaviour
         }
         else
         {
-            dataLoader.datas[ModeController.currentModeIndex].date.Add(new Year { year = calendarGenerate.year, months = new List<Month>() });
+            dataLoader.dataList.datas[ModeController.currentModeIndex].date.Add(new Year { year = calendarGenerate.year, months = new List<Month>() });
             ContainsYear(calendarGenerate.year).months.Add(new Month { month = calendarGenerate.month, isFullDay = calendarGenerate.isFullDay });
             Debug.Log("SaveDays else");
         }
 
-        dataLoader.SaveGame(ModeController.currentModeIndex);
+        dataLoader.SaveData();
     }
 
     //Проверка есть ли в хранилище месяцы этого года?
     private Year ContainsYear(int year)
     {
-        foreach (Year yr in dataLoader.datas[ModeController.currentModeIndex].date)
+        foreach (Year yr in dataLoader.dataList.datas[ModeController.currentModeIndex].date)
         {
             if (yr.year == year)
             {
@@ -141,7 +141,7 @@ public class DisplaySpawnController : MonoBehaviour
 
     private List<bool> CheckDateInPool(DateTime dateTime)
     {
-        foreach(Year year in dataLoader.datas[ModeController.currentModeIndex].date)
+        foreach(Year year in dataLoader.dataList.datas[ModeController.currentModeIndex].date)
         {
             if (year.year == dateTime.Year)
             {
