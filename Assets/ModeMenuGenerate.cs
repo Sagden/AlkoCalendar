@@ -35,7 +35,8 @@ public class ModeMenuGenerate : MonoBehaviour
             MenuButton newButton = Instantiate(menuButtonPrefab, buttonsContentContainer);
             newButton.index = i;
             newButton.text.text = dataLoader.dataList.datas[i].nameCategory;
-            newButton.image.sprite = dataLoader.dataList.datas[i].icon;
+            if (dataLoader.dataList.datas[i].icon != null)
+                newButton.image.sprite = dataLoader.dataList.datas[i].icon;
             menuButtonObjects.Add(newButton);
         }
     }
